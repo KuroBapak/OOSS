@@ -1,12 +1,12 @@
 # OOSS
 
-> A Shopee-like clone E-commerce app serving the basic needs of President University dorm residents.
+> A Shopee-like clone E-commerce app serving the basic needs of President University dorm residents And Java Employee Manegement System.
 
 ---
 
 ## Table of Contents
 
-* [About](#about)
+* [Project 1: MoRiJul](#about)
 * [Team](#team)
 * [Tech Stack](#tech-stack)
 * [Features](#features)
@@ -56,13 +56,37 @@ Hello sir, this is the captain speaking. Our group consists of 3 people and 1 AI
 
 ## Features
 
-* Product listing with variations (e.g., size)
-* Add to cart (session storage)
-* Chat between Admin & User using a unique code
-* Admin login and dashboard
-* Order management: view buyer details, room number, payment type/status
-* Payment options: Cash on Delivery (COD), QRIS (integration pending)
-* Responsive design for desktop and mobile
+Below are the core features alongside screenshots illustrating each:
+
+### Product Listing & Variations
+
+Users can browse products with size options (kecil, sedang, besar) directly from the Home page.
+
+![Product Listing](./images/User_product.png)
+
+### Add to Cart (Session Storage)
+
+Products can be added to a session-based cart without logging in, visible in the Cart summary.
+
+![Cart Summary](./images/Cart_page.png)
+
+### Checkout & Payment Options
+
+Users choose between Cash on Delivery (COD) or QRIS at checkout.
+
+![Checkout Page](./images/Checkout_page.png)
+
+### Unique Order Code & Chat
+
+Each order generates a unique code for two-way chat between customer and admin.
+
+![Order Code](./images/Order_code.png)  ![Chat Interface](./images/User_chat.png)
+
+### Admin Login & Dashboard
+
+Secure admin login leads to a dashboard for managing orders and payment status.
+
+![Admin Login](./images/Login.png)  ![Admin Dashboard](./images/Admin_page.png)
 
 ---
 
@@ -219,6 +243,11 @@ The flowchart illustrates the user journey and admin processes.
 ## Project 2: Employee Management System
 
 > A Java-based Employee Attendance and Payroll system with roles for Admin, HRD, and Employee.
+> i do make this acctualy for testing my IoT attendance system so its using rfid that sends the user data per day and counted it to send it
+each month to the hrd decide the total payment.
+> there's some confusing relation around the table that i dont have time to change.
+> HRD dont need to count the total payment because its taken from employee salary(e.Salary - a.days_missed * 1000),
+the rest is simple crud to match the requirements.
 
 ---
 
@@ -235,21 +264,39 @@ The flowchart illustrates the user journey and admin processes.
 * **Admin View** (CRUD Admin & Employee; Salary & Department filter)
 
   1. Dashboard with employee list, salary and department filters
-  2. Add Admin, Edit Admin
-  3. Add Employee, Edit Employee
+     ![Admin Dashboard](./images/Jadmin_view.png)
+  2. View Employee Admin
+     ![Employee View](./images/Jadmin_view.png)
+  3. Add Admin
+     ![Add Admin](./images/Jadmin_adda.png)
+  4. Edit Admin
+     ![Edit Admin](./images/Jadmin_edita.png)
+  5. View Admin Management
+     ![Employee View](./images/Jadmin_viewa.png)
+  6. Add Employee
+     ![Add Employee](./images/Jadmin_add.png)
+  7. Edit Employee
+     ![Edit Employee](./images/Jadmin_edit.png)
+
 * **HRD View** (Attendance & Payment Management)
 
-  1. Add/Edit absence records
-  2. Update payment status
+  1. View HRD
+     ![Employee View](./images/Hadmin_view.png)
+  2. Add/Edit absence records
+     ![HRD Absence Manual Add](./images/Hadmin_add.png)
+  3. Update payment status
+     ![HRD Payment](./images/Hadmin_edit.png)
+
 * **Employee View** (Read-Only)
 
   1. View attendance, payment status, total payment
+     ![Employee View](./images/Employee_view.png)
 
 ---
 
 ### Database Schema
 
-![Employee DB](./images/db-company.png)
+![Employee DB](./images/DB1.png)
 
 | Table         | Column       | Type                | Key               | Relations / Notes                  |
 | ------------- | ------------ | ------------------- | ----------------- | ---------------------------------- |
@@ -273,11 +320,6 @@ The flowchart illustrates the user journey and admin processes.
 
 ---
 
-### Flowchart
-
-![Employee Management Flowchart](./images/flowchart_employee.png)
-
----
 
 ## Contributing
 
