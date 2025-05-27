@@ -248,6 +248,7 @@ each month to the hrd decide the total payment.
 > there's some confusing relation around the table that i dont have time to change.
 > HRD dont need to count the total payment because its taken from employee salary(e.Salary - a.days_missed * 1000),
 the rest is simple crud to match the requirements.
+> I honestly frustated about java its not fun and too old but i do like javascript :D.
 
 ---
 
