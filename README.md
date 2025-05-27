@@ -14,8 +14,9 @@
 * [Usage](#usage)
 * [Database Schema](#database-schema)
 * [Flowchart](#flowchart)
-* [Pages User](#pagesU)
-* [Pages Admins](#pagesA)
+* [Pages User](#pagesu)
+* [Pages Admins](#pagesa)
+* [Project 2: Employee Management System](#project-2-employee-management-system)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -29,7 +30,7 @@ Hello sir, this is the captain speaking. Our group consists of 3 people and 1 AI
 
 * **Framework**: Laravel
 * **CSS Framework**: Bootstrap
-* **Session-based cart**: Users (buyers) can browse and shop without logging in; sessions manage cart data.
+* **Session-based cart**: Users (buyers) can browse and shop without logging in because I use session data for cart.
 
 ---
 
@@ -57,8 +58,7 @@ Hello sir, this is the captain speaking. Our group consists of 3 people and 1 AI
 
 * Product listing with variations (e.g., size)
 * Add to cart (session storage)
-* Chat Between Admin&User
-* Unique code used for Chat Between admin&user also for updating order status
+* Chat between Admin & User using a unique code
 * Admin login and dashboard
 * Order management: view buyer details, room number, payment type/status
 * Payment options: Cash on Delivery (COD), QRIS (integration pending)
@@ -180,7 +180,7 @@ The flowchart illustrates the user journey and admin processes.
 
 ---
 
-## PagesU
+## Pages User
 
 1. **Home**: Product showcases
 2. **Product**: Detailed view, add to cart
@@ -189,23 +189,24 @@ The flowchart illustrates the user journey and admin processes.
 5. **Order Code**: Randomly generated unique code used for chatting between admin and user
 6. **Chat Interface**: User chat interface
 
-
 ![Home Page](./images/User_page.png)
 ![Product Page](./images/User_product.png)
 ![Cart Page](./images/Cart_page.png)
 ![Checkout Page](./images/Checkout_page.png)
-![Code Page](./images/Order_code.png)
+![Order Code Page](./images/Order_code.png)
 ![Chat User Page](./images/User_chat.png)
 
-## PagesA
+---
+
+## Pages Admins
 
 1. **Admin Login**: Secure access for admin
-2. **Admin Dashboard**: Order list, update payment status,chat to user
+2. **Admin Dashboard**: Order list, update payment status, chat to user
 3. **Admin Chat**: Admin chat interface
-4. **Admin Product**: List of added product to the catalog. Add,delete&edit
-5. **Admin Edit**: Admin edit product view 
-6. **Delivery Page**: Delivery man page if they asked to send the ordered items to the
-costumer so the delivery man validate the code for updating order status
+4. **Admin Product**: List of added product to the catalog. Add, delete & edit
+5. **Admin Edit**: Admin edit product view
+6. **Delivery Page**: Delivery man page for validating order code and updating status
+
 ![Admins Login](./images/Login.png)
 ![Admin Page](./images/Admin_page.png)
 ![Admin Chat Page](./images/Admin_chat.png)
@@ -213,6 +214,68 @@ costumer so the delivery man validate the code for updating order status
 ![Admin Edit Page](./images/Edit_page.png)
 ![Delivery Page](./images/Delivery_page.png)
 
+---
+
+## Project 2: Employee Management System
+
+> A Java-based Employee Attendance and Payroll system with roles for Admin, HRD, and Employee.
+
+---
+
+### Tech Stack
+
+* **Language & IDE**: Java (NetBeans)
+* **Database**: MySQL
+* **Framework**: JDBC
+
+---
+
+### Features & Views
+
+* **Admin View** (CRUD Admin & Employee; Salary & Department filter)
+
+  1. Dashboard with employee list, salary and department filters
+  2. Add Admin, Edit Admin
+  3. Add Employee, Edit Employee
+* **HRD View** (Attendance & Payment Management)
+
+  1. Add/Edit absence records
+  2. Update payment status
+* **Employee View** (Read-Only)
+
+  1. View attendance, payment status, total payment
+
+---
+
+### Database Schema
+
+![Employee DB](./images/db-company.png)
+
+| Table         | Column       | Type                | Key               | Relations / Notes                  |
+| ------------- | ------------ | ------------------- | ----------------- | ---------------------------------- |
+| **employees** | ID           | INT AUTO\_INCREMENT | PK                | Stores employee details            |
+|               | Name         | VARCHAR(100)        |                   |                                    |
+|               | Department   | VARCHAR(50)         |                   |                                    |
+|               | Salary       | DECIMAL(10,2)       |                   |                                    |
+|               | address      | VARCHAR(255)        |                   |                                    |
+|               | pay\_card    | VARCHAR(50)         |                   |                                    |
+|               | emp\_type    | ENUM                |                   | 'Employee','Contract'              |
+| **users**     | user\_id     | INT AUTO\_INCREMENT | PK                | Login credentials and role mapping |
+|               | username     | VARCHAR(50)         | UNIQUE            |                                    |
+|               | password     | VARCHAR(255)        |                   |                                    |
+|               | role         | ENUM                |                   | 'Admin','HRD','Employee'           |
+|               | emp\_id      | INT                 | FK → employees.ID |                                    |
+| **absences**  | absence\_id  | INT AUTO\_INCREMENT | PK                | Attendance records per month       |
+|               | emp\_id      | INT                 | FK → employees.ID |                                    |
+|               | month        | DATE                |                   | Month of record                    |
+|               | days\_missed | INT                 |                   |                                    |
+|               | status       | ENUM                |                   | 'Done','Not Yet' default 'Not Yet' |
+
+---
+
+### Flowchart
+
+![Employee Management Flowchart](./images/flowchart_employee.png)
 
 ---
 
